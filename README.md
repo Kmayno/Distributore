@@ -50,7 +50,7 @@ distributore/
   - Azzeramento incasso
   - Azzeramento credito cliente
 
-## 🛠️ Tecnologie Utilizzate
+## Tecnologie Utilizzate
 
 - **Java SE**: Linguaggio di programmazione principale
 - **Scanner**: Per l'input da console
