@@ -78,6 +78,7 @@ public class Admin {
 				String codiceRimuovi = scanner.next();
 				scanner.nextLine();
 				distributore.rimuoviBevanda(codiceRimuovi);
+				System.out.println("La bevanda e' stata rimossa con successo.");
 				break;
 
 			case 4:

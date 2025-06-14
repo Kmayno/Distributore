@@ -100,6 +100,7 @@ public class Distributore {
 		for (Bevanda i : catalogo) {
 			if (i.getCodice().equalsIgnoreCase(codice)) {
 				i.setPrezzo(nuovoPrezzo);
+				System.out.println("Nuovo prezzo: " +i.getPrezzo()+"€"+" per la bevanda: "+i.getNome());
 				return;
 			}
 		}
@@ -110,6 +111,7 @@ public class Distributore {
 		for (Bevanda i : catalogo) {
 			if (i.getCodice().equalsIgnoreCase(codice)) {
 				i.setQuantita(i.getQuantita() + nuove);
+				System.out.println("Hai rifornito la bevanda: "+i.getNome()+" di "+ nuove+" unita'");
 			}
 		}
 	}

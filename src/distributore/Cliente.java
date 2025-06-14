@@ -20,7 +20,7 @@ public class Cliente {
 
 		while (true) {
 			// Stampa del menu cliente
-			System.out.println("\n--- Menu Cliente ---");
+			System.out.println("Benvenuto.");
 			System.out.println("Credito attuale: " + distributore.getCredito() + " €");
 			System.out.println("1 - Inserisci credito");
 			System.out.println("2 - Visualizza l'inventario");
@@ -53,9 +53,9 @@ public class Cliente {
 				case 3:
 					// Acquisto di una bevanda tramite codice
 					System.out.println("Inserisci il codice della bevanda da acquistare:");
-					String scelta2 = input.next(); // lettura codice
+					String codice = input.next(); // lettura codice
 					try {
-						distributore.acquistaBevanda(scelta2); // può generare un'eccezione
+						distributore.acquistaBevanda(codice); // può generare un'eccezione
 					} catch (EccezioneBevandaNonDisponibile e) {
 						// Gestione eccezione: bevanda non disponibile o codice errato
 						System.err.println("Errore: " + e.getMessage());

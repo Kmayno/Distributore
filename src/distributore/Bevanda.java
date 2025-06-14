@@ -61,6 +61,6 @@ public class Bevanda {
     // Rappresentazione in formato stringa della bevanda (utile per stampa inventario)
     @Override
     public String toString() {
-        return "bevande [nome=" + nome + ", codice=" + codice + ", prezzo=" + prezzo + ", quantita=" + quantita + "]";
+        return "Nome: " + nome + ", Codice: " + codice + ", Prezzo: " + prezzo +"€"+ ", Quantita: " + quantita;
     }
 }
