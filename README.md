@@ -138,11 +138,11 @@ Il distributore viene inizializzato con:
 
 ## 👨‍💻 Autori
 
-**Carmine Nigro** 
-**Valerio Piccolo**
-**Ludovica Colaci**
-**Salvatore Baiano**
-**Carmen Dela Bruna**
+- Carmine Nigro
+- Valerio Piccolo
+- Ludovica Colaci
+- Salvatore Baiano
+- Carmen Della Bruna
 ---
 
 *Progetto sviluppato come esempio di sistema di gestione distributore automatico in Java.*
