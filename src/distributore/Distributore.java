@@ -138,15 +138,15 @@ public class Distributore {
 
     // Aggiunge una certa quantità a una bevanda esistente
     public void rifornisci(String codice, int nuove) {
-        boolean rifornisciCodiceOccupato = false;
+        boolean rifornisciCodiceVerifica = false;
         for (Bevanda i : catalogo) {
             if (i.getCodice().equalsIgnoreCase(codice)) {
                 i.setQuantita(i.getQuantita() + nuove);
-                rifornisciCodiceOccupato = true;
+                rifornisciCodiceVerifica = true;
                 System.out.println("Hai rifornito la bevanda: " + i.getNome() + " di " + nuove + " unita'");
             }
         }
-        if (!rifornisciCodiceOccupato) {
+        if (!rifornisciCodiceVerifica) {
             System.err.println("Nessuna bevanda trovata con il codice: " + codice);
         }
     }
