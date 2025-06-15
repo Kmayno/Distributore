@@ -3,10 +3,10 @@ package distributore;
 public class Bevanda {
 
     // Attributi della bevanda
-    protected String nome;      // Nome della bevanda (es: CocaCola)
-    protected String codice;    // Codice identificativo della bevanda (es: "01")
-    protected double prezzo;    // Prezzo in euro
-    protected int quantita;     // Quantità disponibile in magazzino
+    private String nome;      // Nome della bevanda (es: CocaCola)
+    private String codice;    // Codice identificativo della bevanda (es: "01")
+    private double prezzo;    // Prezzo in euro
+    private int quantita;     // Quantità disponibile in magazzino
 
     // Costruttore: inizializza tutti i campi della bevanda
     public Bevanda(String nome, String codice, double prezzo, int quantita) {

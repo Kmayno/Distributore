@@ -20,7 +20,7 @@ public class MainDistributore {
 			distributore.stampaInventario(); // Stampa l'inventario delle bevande
 
 			// Opzioni per l'utente
-			System.out.println("clicca 1 se sei un utente");
+			System.out.println("cliccare 1 se sei un utente");
 			System.out.println("cliccare 2 se sei un Admin");
 			System.out.println("cliccare 3 se vuoi uscire");
 
@@ -42,7 +42,7 @@ public class MainDistributore {
 						admin.menuAdmin();
 					} else {
 						// Messaggio di errore se la password è sbagliata
-						System.out.println("password errata. Accesso negato.");
+						System.err.println("password errata. Accesso negato.");
 					}
 					break;
 				case 3:

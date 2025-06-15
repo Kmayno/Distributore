@@ -36,12 +36,23 @@ public class Cliente {
 				case 1:
 					// Inserimento di credito
 					System.out.print("Inserisci importo da aggiungere: ");
-						double importo = input.nextDouble();
-						if(importo>0) {
-							distributore.aggiungiCredito(importo);
-						} else{
-							System.out.println("inserisci importo positivo.");
+					Double importo=0.0;
+					boolean verificaImporto=false;
+
+					while(!verificaImporto) {
+						try {
+							importo = input.nextDouble();
+							if (importo > 0) {
+								distributore.aggiungiCredito(importo);
+								verificaImporto=true;
+							} else {
+								System.out.println("inserisci importo positivo.");
+							}
+						} catch (InputMismatchException e) {
+							System.out.println("inserisci un importo valido.");
+							input.nextLine();
 						}
+					}
 
 					break;
 
@@ -64,7 +75,6 @@ public class Cliente {
 
 				case 4:
 					// Eroga il resto azzerando il credito
-					System.out.println("Erogazione del resto in corso...");
 					distributore.azzeraCredito();
 					break;
 

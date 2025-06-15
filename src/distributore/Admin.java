@@ -19,14 +19,13 @@ public class Admin {
 
 	// Metodo per verificare la password inserita dall'utente
 	public boolean verificaPass(String password) {
-		//System.out.println("Inserisci la password"); //inutile perche gli passo solo la stringa
-		//String password = scanner.nextLine(); // Legge la password
-		return passFinal.equals(password); // Confronta con la password corretta
+		// Confronta con la password corretta
+		return passFinal.equals(password);
 	}
 
 	// Menu delle funzionalità riservate all'admin
 	public void menuAdmin() {
-		int sceltaAdmin1; // Scelta dell'admin nel menu
+		int scelta; // Scelta dell'admin nel menu
 
 		do {
 			// Stampa delle opzioni disponibili
@@ -42,9 +41,9 @@ public class Admin {
 			System.out.println("9) Esci dal menu Admin.");
 
 			// Lettura della scelta
-			sceltaAdmin1 = scanner.nextInt();
+			scelta = scanner.nextInt();
 
-			switch (sceltaAdmin1) {
+			switch (scelta) {
 			case 1:
 				// Visualizza tutto l'inventario delle bevande
 				distributore.stampaInventario();
@@ -60,13 +59,47 @@ public class Admin {
 				String codice = scanner.next();
 				scanner.nextLine();
 
-				System.out.println("Inserisci prezzo della bevanda:");
-				Double prezzo = scanner.nextDouble();
-				scanner.nextLine();
+				//assegnazione del prezzo della bevanda
+				Double prezzo = 0.0;
+				//boolean di controllo
+				boolean verificaPrezzo = false;
+				//gestione degli errori "inputMismatch" e "numero negativo"
+				while(!verificaPrezzo){
+					System.out.println("Inserisci prezzo della bevanda:");
+					try{
+						prezzo = scanner.nextDouble();
+						scanner.nextLine();
+						if(prezzo>=0){
+							verificaPrezzo=true;
+						}else{
+							System.out.println("Inserisci un numero positivo.");
+						}
+					}catch(InputMismatchException e){
+						System.out.println("Errore: inserisci un numero.");
+						scanner.nextLine();
+					}
+				}
 
-				System.out.println("Inserisci la quantità:");
-				int quantita = scanner.nextInt();
-				scanner.nextLine();
+				int quantita=0;
+				boolean verificaQuantita=false;
+				while(!verificaQuantita){
+					System.out.println("Inserisci la quantità:");
+					try{
+						quantita = scanner.nextInt();
+						scanner.nextLine();
+						if(quantita>0){
+							verificaQuantita=true;
+						}else{
+							System.out.println("Inserisci un numero positivo.");
+						}
+					}catch(InputMismatchException e){
+						System.out.println("Errore: inserisci un numero.");
+						scanner.nextLine();
+					}
+				}
+
+
+				//scanner.nextLine();
 
 				// Crea nuova bevanda e la aggiunge al catalogo
 				distributore.aggiungiBevanda(new Bevanda(nome, codice, prezzo, quantita));
@@ -76,9 +109,8 @@ public class Admin {
 				// Rimozione di una bevanda tramite codice
 				System.out.println("Inserisci il codice della bevanda che vuoi rimuovere:");
 				String codiceRimuovi = scanner.next();
-				scanner.nextLine();
+				//scanner.nextLine();
 				distributore.rimuoviBevanda(codiceRimuovi);
-				System.out.println("La bevanda e' stata rimossa con successo.");
 				break;
 
 			case 4:
@@ -87,14 +119,22 @@ public class Admin {
 				String codiceModPrezzo = scanner.next();
 				scanner.nextLine();
 
-				Double nuovoPrezzo = null;
-				while (nuovoPrezzo == null) {
+				Double nuovoPrezzo = 0.0;
+				boolean verificaNuovoPrezzo =false;
+				//while per il try catch, finche' l'utente non inserisce un int non esce dal ciclo
+				while (!verificaNuovoPrezzo) {
 					System.out.println("Inserisci il nuovo prezzo:");
 					try {
 						nuovoPrezzo = scanner.nextDouble();
 						scanner.nextLine();
+						//il numero inserito deve essere per forza positivo
+						if(nuovoPrezzo>0) {
+							verificaNuovoPrezzo = true;
+						} else{
+							System.out.println("Inserisci un numero positivo.");
+						}
 					} catch (InputMismatchException e) {
-						System.out.println("Errore. Inserisci un numero decimale.");
+						System.out.println("Errore. Inserisci un numero.");
 						scanner.nextLine();
 					}
 				}
@@ -108,9 +148,19 @@ public class Admin {
 				String codiceRifornimento = scanner.next();
 				scanner.nextLine();
 
-				System.out.println("Inserisci la nuova quantità:");
-				int quantitaDaAggiungere = scanner.nextInt();
-				scanner.nextLine();
+				int quantitaDaAggiungere = 0;
+				boolean verificaQuantitaAggiunta = false;
+				while (!verificaQuantitaAggiunta) {
+					System.out.println("Inserisci la nuova quantità:");
+					try {
+						quantitaDaAggiungere = scanner.nextInt();
+						scanner.nextLine();
+						verificaQuantitaAggiunta = true;
+					} catch (InputMismatchException e) {
+						System.out.println("Errore: inserisci un numero.");
+						scanner.nextLine();
+					}
+				}
 
 				distributore.rifornisci(codiceRifornimento, quantitaDaAggiungere);
 				break;
@@ -140,6 +190,6 @@ public class Admin {
 				System.out.println("Inserisci un numero valido.");
 			}
 
-		} while (sceltaAdmin1 != 9); // Ripeti finché l'admin non sceglie di uscire
+		} while (scelta != 9); // Ripeti finché l'admin non sceglie di uscire
 	}
 }
