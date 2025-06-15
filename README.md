@@ -118,7 +118,7 @@ Il distributore viene inizializzato con:
 4. Gestisci inventario, prezzi o visualizza incassi
 ```
 
-## 🔧 Caratteristiche Tecniche
+## Caratteristiche Tecniche
 
 ### Gestione degli Errori
 - **EccezioneBevandaNonDisponibile**: Gestisce i casi di:
