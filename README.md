@@ -1,8 +1,8 @@
-# Distributore Automatico 🥤
+# Distributore Automatico
 
 Un sistema di gestione per distributore automatico di bevande sviluppato in Java, che simula le operazioni di acquisto per i clienti e le funzionalità amministrative per la gestione dell'inventario.
 
-## 📋 Descrizione
+## Descrizione
 
 Il progetto implementa un distributore automatico che permette ai clienti di:
 - Inserire credito
@@ -16,7 +16,7 @@ Gli amministratori possono:
 - Monitorare incassi
 - Rifornire il distributore
 
-## 🏗️ Struttura del Progetto
+## Struttura del Progetto
 
 ```
 distributore/
@@ -28,7 +28,7 @@ distributore/
 └── MainDistributore.java               # Classe principale con menu
 ```
 
-## 🚀 Funzionalità
+## Funzionalità
 
 ### Per i Clienti
 - **Inserimento credito**: Aggiunta di denaro al distributore
@@ -50,14 +50,14 @@ distributore/
   - Azzeramento incasso
   - Azzeramento credito cliente
 
-## 🛠️ Tecnologie Utilizzate
+## Tecnologie Utilizzate
 
 - **Java SE**: Linguaggio di programmazione principale
 - **Scanner**: Per l'input da console
 - **ArrayList**: Per la gestione dinamica dell'inventario
 - **Exception Handling**: Gestione personalizzata degli errori
 
-## 📦 Installazione e Avvio
+##  Installazione e Avvio
 
 ### Prerequisiti
 - Java JDK 8 o superiore
@@ -85,7 +85,7 @@ distributore/
 1. Importa il progetto nel tuo IDE
 2. Esegui la classe `MainDistributore.java`
 
-## 💻 Utilizzo
+## Utilizzo
 
 ### Menu Principale
 All'avvio, il sistema mostra:
@@ -136,13 +136,13 @@ Il distributore viene inizializzato con:
 - **Incapsulamento**: Uso di getter/setter per l'accesso ai dati
 - **Gestione dello stato**: Mantenimento di credito e incasso
 
-## 👨‍💻 Autori
+## Autori
 
-**Carmine Nigro** 
-**Valerio Piccolo**
-**Ludovica Colaci**
-**Salvatore Baiano**
-**Carmen Dela Bruna**
+- Carmine Nigro
+- Valerio Piccolo
+- Ludovica Colaci
+- Salvatore Baiano
+- Carmen Della Bruna
 ---
 
 *Progetto sviluppato come esempio di sistema di gestione distributore automatico in Java.*
